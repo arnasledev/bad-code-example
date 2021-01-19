@@ -1,5 +1,6 @@
 var users = require("../mocks/users.json");
 
+// there is a logic bug. you need to read json file contents every time you call a function.
 var get_user = function ({ name = false, userId = false }) {
   if (!name && !userId) {
     throw new Error(

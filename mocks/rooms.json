@@ -2,22 +2,7 @@
   {
     "roomId": "b0d88b61-c4ab-441c-bfb2-d63e928ff95b",
     "name": "Room #1",
-    "messages": [],
     "createdAt": "2021-01-15 09:00:00",
     "updatedat": "2021-01-16 09:00:00"
-  },
-  {
-    "roomId": "e79767ce-ae8d-415b-8c49-42943369b7ec",
-    "name": "Room #3",
-    "messages": [],
-    "createdAt": "2021-01-19T12:58:42.828Z",
-    "updatedat": "2021-01-19T12:58:42.828Z"
-  },
-  {
-    "roomId": "d198a570-6dd3-4fba-8838-adc917651588",
-    "name": "Room #4",
-    "messages": [],
-    "createdAt": "2021-01-19T12:59:12.734Z",
-    "updatedat": "2021-01-19T12:59:12.734Z"
   }
 ]

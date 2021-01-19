@@ -4,6 +4,7 @@ var messages = require("./mocks/messages.json");
 
 var { get_user } = require("./helpers/UserHelper");
 var { getRoom } = require("./helpers/room_helper");
+var { getLast_message } = require("./helpers/MessageHelper");
 var generalHelpers = require("./helpers/general_helper");
 
 function add_user(name) {
@@ -27,6 +28,8 @@ function add_user(name) {
   } catch (error) {
     throw new Error("Failed to create new user");
   }
+
+  return users[users.length];
 }
 
 function createRoom(name) {
@@ -36,11 +39,11 @@ function createRoom(name) {
       "Room with such a name already exist and it's id is " + room.roomId
     );
   }
+
   try {
     rooms.push({
       roomId: generalHelpers.uuidGenerator(),
       name: name,
-      messages: [],
       createdAt: generalHelpers.date_generator(),
       updatedat: generalHelpers.date_generator(),
     });
@@ -49,6 +52,11 @@ function createRoom(name) {
   } catch (error) {
     throw new Error("Failed to create new room");
   }
+
+  try {
+  } catch (error) {}
+
+  return rooms[rooms.length];
 }
 
 function addMessage({ userId, roomId, message }) {
@@ -58,22 +66,25 @@ function addMessage({ userId, roomId, message }) {
   }
 
   var room = getRoom({ roomId });
-  if (!user) {
+  if (!room) {
     throw new Error(
       "You are trying to write a message to a non existing room. Watchout bad boi"
     );
   }
 
-  // last message kada buvo ideta ar nespamini
+  // last message and check if it was written by the same user and check if
+  // it was writen more than 5 seconds. throw spam error if not.
+  var lastMessage = getLast_message(room.roomId);
+  console.log(lastMessage);
 }
 
 (() => {
   try {
-    add_user("Albertas Abelis 96");
-    createRoom("Room #4");
-    // write message
+    var user = add_user("Albertas Abelis 96");
+    var room = createRoom("Room #4");
 
     // get room with its messages and include user to every fkin message
+    // print the result to the output
   } catch (error) {
     console.error("Error on add user", error);
   }

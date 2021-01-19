@@ -22,6 +22,8 @@ function writeToDatabase({ database, data = {} }) {
   return fs.writeFileSync(pathToWrite, stringifiedData);
 }
 
+// you need to write a general method to read database content
+
 module.exports = {
   uuidGenerator,
   date_generator,
