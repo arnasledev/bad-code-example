@@ -1,0 +1,14 @@
+{
+  "name": "badcode",
+  "version": "1.0.0",
+  "description": "please upgrade me, im so lonely in this dark old world. i wish i could have a time machine called ES2020 with TS implementation...",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arnas P.",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
